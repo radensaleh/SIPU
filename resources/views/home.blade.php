@@ -285,9 +285,9 @@
 												}else if(OK && res.ukm == 'UKM03'){
 														window.location.href = "{{ url('dashboard-rpi') }}";
 												}else if(OK && res.ukm == 'UKM04'){
-														window.location.href = "{{ url('dashboard-popi') }}" + "/" + res.id_admin;
+														window.location.href = "{{ url('dashboard-popi') }}";
 												}else if(OK && res.ukm == 'UKM05'){
-														window.location.href = "{{ url('dashboard-folafo') }}" + "/" + res.id_admin;
+														window.location.href = "{{ url('dashboard-folafo') }}";
 												}
 											});
 									}else{
