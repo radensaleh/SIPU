@@ -31,7 +31,7 @@
 
 <aside class="app-sidebar" id="sidebar">
   <div class="sidebar-header">
-    <a class="sidebar-brand" href="{{ route('dashboardRpi', $getid->id_admin) }}"><span class="highlight">SIPU</span> POLINDRA</a>
+    <a class="sidebar-brand" href="{{ route('dashboardRpi') }}"><span class="highlight">SIPU</span> POLINDRA</a>
     <button type="button" class="sidebar-toggle">
       <i class="fa fa-times"></i>
     </button>
@@ -39,7 +39,7 @@
   <div class="sidebar-menu">
     <ul class="sidebar-nav">
       <li class="active">
-        <a href="{{ route('dashboardRpi', $getid->id_admin) }}">
+        <a href="{{ route('dashboardRpi') }}">
           <div class="icon">
             <i class="fa fa-tasks" aria-hidden="true"></i>
           </div>
@@ -48,7 +48,7 @@
       </li>
 
       <li>
-        <a href="{{ route('data-rpi', $getid->id_admin) }}">
+        <a href="{{ route('data-rpi') }}">
           <div class="icon">
             <i class="fa fa-database" aria-hidden="true"></i>
           </div>

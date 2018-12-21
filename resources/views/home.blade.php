@@ -283,7 +283,7 @@
 												}else if(OK && res.ukm == 'UKM02'){
 														window.location.href = "{{ url('dashboard-kopen') }}";
 												}else if(OK && res.ukm == 'UKM03'){
-														window.location.href = "{{ url('dashboard-rpi') }}" + "/" + res.id_admin;
+														window.location.href = "{{ url('dashboard-rpi') }}";
 												}else if(OK && res.ukm == 'UKM04'){
 														window.location.href = "{{ url('dashboard-popi') }}" + "/" + res.id_admin;
 												}else if(OK && res.ukm == 'UKM05'){
