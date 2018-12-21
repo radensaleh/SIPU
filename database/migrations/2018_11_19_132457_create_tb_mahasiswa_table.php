@@ -14,9 +14,10 @@ class CreateTbMahasiswaTable extends Migration
     public function up()
     {
         Schema::create('tb_mahasiswa', function (Blueprint $table) {
-            $table->string('nim');
+            $table->string('nim')->primary();
             $table->string('nama_mhs');
-            $table->string('id_prodi');
+            $table->string('id_prodi')->index();
+            $table->foreign('id_prodi')->references('id_prodi')->on('tb_prodi');
             $table->string('email');
             $table->string('password');
             $table->string('alamat');

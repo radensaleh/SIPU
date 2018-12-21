@@ -14,7 +14,7 @@ class CreateTbAdminUkmTable extends Migration
     public function up()
     {
         Schema::create('tb_admin_ukm', function (Blueprint $table) {
-            $table->string('id_admin');
+            $table->string('id_admin')->primary();
             $table->string('nama_admin');
             $table->string('email');
             $table->string('password');

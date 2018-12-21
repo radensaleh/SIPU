@@ -14,7 +14,7 @@ class CreateTbJurusanTable extends Migration
     public function up()
     {
         Schema::create('tb_jurusan', function (Blueprint $table) {
-            $table->string('id_jurusan');
+            $table->string('id_jurusan')->primary();
             $table->string('nama_jurusan');
             $table->timestamps();
         });
