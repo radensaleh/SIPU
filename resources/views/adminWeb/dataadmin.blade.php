@@ -294,10 +294,10 @@
                    <th>Email</th>
                    <td id="email"></td>
                </tr>
-               <tr>
+               <!-- <tr>
                    <th>Password</th>
                    <td id="password"></td>
-               </tr>
+               </tr> -->
                <tr>
                    <th>ID UKM</th>
                    <td id="id_ukm"></td>
