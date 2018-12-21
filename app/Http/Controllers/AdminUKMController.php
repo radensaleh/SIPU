@@ -85,16 +85,19 @@ class AdminUKMController extends Controller
       }
       public function data_kompa(Request $request){
          $id = $request->session()->get('id_admin');
-         $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
-         $getidUkm    = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
-         $countDaftar = Pendaftaran::count();
+         if(!$request->session()->exists('id_admin')){
+           return redirect()->route('home');
+         }else{
+           $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
+           $getidUkm    = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
+           $countDaftar = Pendaftaran::count();
 
-         $dataKompa = Pendaftaran::with('mahasiswa')->where('id_ukm', $getidUkm)->get();
+           $dataKompa = Pendaftaran::with('mahasiswa')->where('id_ukm', $getidUkm)->get();
 
-         return view('adminUkm.kompa.datakompa',
-            compact('getid','countDaftar','dataKompa')
-         );
-
+           return view('adminUkm.kompa.datakompa',
+              compact('getid','countDaftar','dataKompa')
+           );
+         }
       }
       public function PdfKompa(Request $request){
           $id = $request->session()->get('id_admin');
@@ -120,27 +123,34 @@ class AdminUKMController extends Controller
       //ADMIN UKM KOPEN [UKM02]
       public function dashboardKopen(Request $request){
           $id = $request->session()->get('id_admin');
-          $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
-          $getIdUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
+          if(!$request->session()->exists('id_admin')){
+            return redirect()->route('home');
+          }else{
+            $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
+            $getIdUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
 
-          $countMHS    = Mahasiswa::count();
-          $countDaftar = Pendaftaran::count();
+            $countMHS    = Mahasiswa::count();
+            $countDaftar = Pendaftaran::count();
 
-          $daftarKopen = DB::table('tb_pendaftaran')->where('id_ukm', $getIdUkm)->count();
-          return view('adminUkm.kopen.dashboard', compact('getid','daftarKopen','countMHS','countDaftar'));
+            $daftarKopen = DB::table('tb_pendaftaran')->where('id_ukm', $getIdUkm)->count();
+            return view('adminUkm.kopen.dashboard', compact('getid','daftarKopen','countMHS','countDaftar'));
+          }
       }
       public function data_kopen(Request $request){
          $id = $request->session()->get('id_admin');
-         $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
-         $getidUkm    = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
-         $countDaftar = Pendaftaran::count();
+         if(!$request->session()->exists('id_admin')){
+           return redirect()->route('home');
+         }else{
+           $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
+           $getidUkm    = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
+           $countDaftar = Pendaftaran::count();
 
-         $dataKopen = Pendaftaran::with('mahasiswa')->where('id_ukm', $getidUkm)->get();
+           $dataKopen = Pendaftaran::with('mahasiswa')->where('id_ukm', $getidUkm)->get();
 
-         return view('adminUkm.kopen.datakopen',
-            compact('getid','countDaftar','dataKopen')
-         );
-
+           return view('adminUkm.kopen.datakopen',
+              compact('getid','countDaftar','dataKopen')
+           );
+         }
       }
       public function PdfKopen(Request $request){
           $id = $request->session()->get('id_admin');
@@ -166,28 +176,35 @@ class AdminUKMController extends Controller
       //ADMIN UKM RPI [UKM03]
       public function dashboardRpi(Request $request){
           $id = $request->session()->get('id_admin');
-          $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
-          $getIdUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
+          if(!$request->session()->exists('id_admin')){
+            return redirect()->route('home');
+          }else{
+            $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
+            $getIdUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
 
-          $countMHS    = Mahasiswa::count();
-          $countDaftar = Pendaftaran::count();
+            $countMHS    = Mahasiswa::count();
+            $countDaftar = Pendaftaran::count();
 
-          $daftarRpi = DB::table('tb_pendaftaran')->where('id_ukm', $getIdUkm)->count();
+            $daftarRpi = DB::table('tb_pendaftaran')->where('id_ukm', $getIdUkm)->count();
 
-          return view('adminUkm.rpi.dashboard', compact('getid','daftarRpi','countMHS','countDaftar'));
+            return view('adminUkm.rpi.dashboard', compact('getid','daftarRpi','countMHS','countDaftar'));
+          }
       }
       public function data_rpi(Request $request){
          $id = $request->session()->get('id_admin');
-         $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
-         $getidUkm    = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
-         $countDaftar = Pendaftaran::count();
+         if(!$request->session()->exists('id_admin')){
+           return redirect()->route('home');
+         }else{
+           $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
+           $getidUkm    = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
+           $countDaftar = Pendaftaran::count();
 
-         $dataRpi = Pendaftaran::with('mahasiswa')->where('id_ukm', $getidUkm)->get();
+           $dataRpi = Pendaftaran::with('mahasiswa')->where('id_ukm', $getidUkm)->get();
 
-         return view('adminUkm.rpi.datarpi',
-            compact('getid','countDaftar','dataRpi')
-         );
-
+           return view('adminUkm.rpi.datarpi',
+              compact('getid','countDaftar','dataRpi')
+           );
+         }
       }
       public function PdfRpi(Request $request){
           $id = $request->session()->get('id_admin');
@@ -213,27 +230,34 @@ class AdminUKMController extends Controller
       //ADMIN UKM POPI [UKM04]
       public function dashboardPopi(Request $request){
           $id = $request->session()->get('id_admin');
-          $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
-          $getIdUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
+          if(!$request->session()->exists('id_admin')){
+            return redirect()->route('home');
+          }else{
+            $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
+            $getIdUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
 
-          $countMHS    = Mahasiswa::count();
-          $countDaftar = Pendaftaran::count();
+            $countMHS    = Mahasiswa::count();
+            $countDaftar = Pendaftaran::count();
 
-          $daftarPopi = DB::table('tb_pendaftaran')->where('id_ukm', $getIdUkm)->count();
-          return view('adminUkm.popi.dashboard', compact('getid','daftarPopi','countMHS','countDaftar'));
+            $daftarPopi = DB::table('tb_pendaftaran')->where('id_ukm', $getIdUkm)->count();
+            return view('adminUkm.popi.dashboard', compact('getid','daftarPopi','countMHS','countDaftar'));
+          }
       }
       public function data_popi(Request $request){
          $id = $request->session()->get('id_admin');
-         $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
-         $getidUkm    = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
-         $countDaftar = Pendaftaran::count();
+         if(!$request->session()->exists('id_admin')){
+           return redirect()->route('home');
+         }else{
+           $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
+           $getidUkm    = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
+           $countDaftar = Pendaftaran::count();
 
-         $dataPopi = Pendaftaran::with('mahasiswa')->where('id_ukm', $getidUkm)->get();
+           $dataPopi = Pendaftaran::with('mahasiswa')->where('id_ukm', $getidUkm)->get();
 
-         return view('adminUkm.popi.datapopi',
-            compact('getid','countDaftar','dataPopi')
-         );
-
+           return view('adminUkm.popi.datapopi',
+              compact('getid','countDaftar','dataPopi')
+           );
+         }
       }
       public function PdfPopi(Request $request){
           $id = $request->session()->get('id_admin');
@@ -259,27 +283,35 @@ class AdminUKMController extends Controller
       //ADMIN UKM FOLAFO [UKM05]
       public function dashboardFolafo(Request $request){
           $id = $request->session()->get('id_admin');
-          $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
-          $getIdUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
+          if(!$request->session()->exists('id_admin')){
+            return redirect()->route('home');
+          }else{
+            $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
+            $getIdUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
 
-          $countMHS    = Mahasiswa::count();
-          $countDaftar = Pendaftaran::count();
+            $countMHS    = Mahasiswa::count();
+            $countDaftar = Pendaftaran::count();
 
-          $daftarFolafo = DB::table('tb_pendaftaran')->where('id_ukm', $getIdUkm)->count();
-          return view('adminUkm.folafo.dashboard', compact('getid','daftarFolafo','countMHS','countDaftar'));
+            $daftarFolafo = DB::table('tb_pendaftaran')->where('id_ukm', $getIdUkm)->count();
+            return view('adminUkm.folafo.dashboard', compact('getid','daftarFolafo','countMHS','countDaftar'));
+
+          }
       }
       public function data_folafo(Request $request){
          $id = $request->session()->get('id_admin');
-         $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
-         $getidUkm    = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
-         $countDaftar = Pendaftaran::count();
+         if(!$request->session()->exists('id_admin')){
+           return redirect()->route('home');
+         }else{
+           $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
+           $getidUkm    = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
+           $countDaftar = Pendaftaran::count();
 
-         $dataFolafo = Pendaftaran::with('mahasiswa')->where('id_ukm', $getidUkm)->get();
+           $dataFolafo = Pendaftaran::with('mahasiswa')->where('id_ukm', $getidUkm)->get();
 
-         return view('adminUkm.folafo.datafolafo',
-            compact('getid','countDaftar','dataFolafo')
-         );
-
+           return view('adminUkm.folafo.datafolafo',
+              compact('getid','countDaftar','dataFolafo')
+           );
+         }
       }
       public function PdfFolafo(Request $request){
           $id = $request->session()->get('id_admin');
