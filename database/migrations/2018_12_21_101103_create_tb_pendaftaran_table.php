@@ -14,13 +14,13 @@ class CreateTbPendaftaranTable extends Migration
     public function up()
     {
         Schema::create('tb_pendaftaran', function (Blueprint $table) {
-            $table->increments('id_pendaftaran');
-            $table->string('id_ukm')->index();
-            $table->foreign('id_ukm')->references('id_ukm')->on('tb_ukm');
-            $table->string('nim')->index();
-            // $table->foreign('nim')->references('nim')->on('tb_mahasiswa');
-            $table->string('alasan');
-            $table->timestamps();
+          $table->increments('id_pendaftaran');
+          $table->string('id_ukm')->index();
+          $table->foreign('id_ukm')->references('id_ukm')->on('tb_ukm');
+          $table->string('nim')->index();
+          $table->foreign('nim')->references('nim')->on('tb_mahasiswa');
+          $table->string('alasan');
+          $table->timestamps();
         });
     }
 
