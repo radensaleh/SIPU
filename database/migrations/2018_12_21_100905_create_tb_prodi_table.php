@@ -14,11 +14,11 @@ class CreateTbProdiTable extends Migration
     public function up()
     {
         Schema::create('tb_prodi', function (Blueprint $table) {
-            $table->string('id_prodi')->primary();
-            $table->string('id_jurusan')->index();
-            $table->foreign('id_jurusan')->references('id_jurusan')->on('tb_jurusan');
-            $table->string('nama_prodi');
-            $table->timestamps();
+          $table->string('id_prodi')->primary();
+          $table->string('id_jurusan')->index();
+          $table->foreign('id_jurusan')->references('id_jurusan')->on('tb_jurusan');
+          $table->string('nama_prodi');
+          $table->timestamps();
         });
     }
 
