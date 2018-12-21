@@ -18,7 +18,7 @@ class CreateTbPendaftaranTable extends Migration
             $table->string('id_ukm')->index();
             $table->foreign('id_ukm')->references('id_ukm')->on('tb_ukm');
             $table->string('nim')->index();
-            $table->foreign('nim')->references('nim')->on('tb_mahasiswa');
+            // $table->foreign('nim')->references('nim')->on('tb_mahasiswa');
             $table->string('alasan');
             $table->timestamps();
         });
