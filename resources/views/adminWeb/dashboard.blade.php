@@ -41,7 +41,7 @@
       <li class="active">
         <a href="{{ route('dashboardAdminWeb') }}">
           <div class="icon">
-            <i class="fas fa-tasks" aria-hidden="true"></i>
+            <i class="fa fa-tasks" aria-hidden="true"></i>
           </div>
           <div class="title">Dashboard</div>
         </a>
@@ -49,7 +49,7 @@
       <li>
         <a href="{{ route('data-admin') }}">
           <div class="icon">
-            <i class="fas fa-database" aria-hidden="true"></i>
+            <i class="fa fa-database" aria-hidden="true"></i>
           </div>
           <div class="title">Data Admin UKM</div>
         </a>
@@ -57,7 +57,7 @@
       <li>
         <a href="{{ route('data-ukm') }}">
           <div class="icon">
-            <i class="fas fa-database" aria-hidden="true"></i>
+            <i class="fa fa-database" aria-hidden="true"></i>
           </div>
           <div class="title">Data UKM</div>
         </a>
@@ -65,7 +65,7 @@
       <li>
         <a href="{{ route('data-prodi') }}">
           <div class="icon">
-            <i class="icon fas fa-graduation-cap" aria-hidden="true"></i>
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
           </div>
           <div class="title">Data Prodi</div>
         </a>
@@ -73,7 +73,7 @@
       <li>
         <a href="{{ route('data-jurusan') }}">
           <div class="icon">
-            <i class="icon fas fa-graduation-cap" aria-hidden="true"></i>
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
           </div>
           <div class="title">Data Jurusan</div>
         </a>
