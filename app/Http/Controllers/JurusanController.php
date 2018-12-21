@@ -65,6 +65,11 @@ class JurusanController extends Controller
              'error' => 0,
              'message' => 'Success Delete Data'
            ], 200);
+         }else{
+           return response()->json([
+             'error' => 0,
+             'message' => 'ga Delete Data'
+           ], 200);
          }
     }
 }

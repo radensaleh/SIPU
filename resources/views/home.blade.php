@@ -178,7 +178,7 @@
 	        <h4 class="modal-title"><span class="fa fa-info-circle"></span> About Us</h4>
 	      </div>
 	        <div class="modal-body">
-
+							SIPU adalah Sistem Informasi dan Pendaftaran UKM Politeknik Negeri Indramayu.
 	        </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-info" data-dismiss="modal"><span class="fa fa-times-circle"></span> Close</button>
