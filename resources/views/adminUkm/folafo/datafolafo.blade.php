@@ -25,7 +25,7 @@
 
 <aside class="app-sidebar" id="sidebar">
   <div class="sidebar-header">
-    <a class="sidebar-brand" href="{{ route('dashboardFolafo', $getid->id_admin) }}"><span class="highlight">SIPU</span> POLINDRA</a>
+    <a class="sidebar-brand" href="{{ route('dashboardFolafo') }}"><span class="highlight">SIPU</span> POLINDRA</a>
     <button type="button" class="sidebar-toggle">
       <i class="fa fa-times"></i>
     </button>
@@ -33,7 +33,7 @@
   <div class="sidebar-menu">
     <ul class="sidebar-nav">
       <li>
-        <a href="{{ route('dashboardFolafo', $getid->id_admin) }}">
+        <a href="{{ route('dashboardFolafo') }}">
           <div class="icon">
             <i class="fa fa-tasks" aria-hidden="true"></i>
           </div>
@@ -42,7 +42,7 @@
       </li>
 
       <li class="active">
-        <a href="{{ route('data-folafo', $getid->id_admin ) }}">
+        <a href="{{ route('data-folafo') }}">
           <div class="icon">
             <i class="fa fa-database" aria-hidden="true"></i>
           </div>
@@ -104,7 +104,7 @@
             </div>
             <ul class="action">
               <li>
-                <a href="{{ url('/') }}">
+                <a href="{{ route('home') }}">
                   Logout
                 </a>
               </li>
@@ -124,7 +124,7 @@
   </button>
   <div class="toggle-content">
     <ul class="actions">
-      <li><a href="{{ route('PdfFolafo', $getid->id_admin) }}"><span class="fa fa-print"></span> Print</a></li>
+      <li><a href="{{ route('PdfFolafo') }}"><span class="fa fa-print"></span> Print</a></li>
     </ul>
   </div>
 </div>
@@ -314,7 +314,7 @@
                           'success'
                       ).then(OK => {
                         if(OK){
-                            window.location.href = "{{ route('data-folafo', $getid->id_admin) }}";
+                            window.location.href = "{{ route('data-folafo') }}";
                         }
                       });
                   } else{

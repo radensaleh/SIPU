@@ -27,6 +27,12 @@ class AdminUKMController extends Controller
             return redirect()->route('dashboardKompa');
           }else if( $id_admin == 'ADM02' ){
             return redirect()->route('dashboardKopen');
+          }else if( $id_admin == 'ADM03' ){
+            return redirect()->route('dashboardRpi');
+          }else if( $id_admin == 'ADM04' ){
+            return redirect()->route('dashboardPopi');
+          }else if( $id_admin == 'ADM05' ){
+            return redirect()->route('dashboardFolafo');
           }
         }else{
           return view('home');
@@ -251,7 +257,8 @@ class AdminUKMController extends Controller
       }
 
       //ADMIN UKM FOLAFO [UKM05]
-      public function dashboardFolafo($id){
+      public function dashboardFolafo(Request $request){
+          $id = $request->session()->get('id_admin');
           $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
           $getIdUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
 
@@ -261,7 +268,8 @@ class AdminUKMController extends Controller
           $daftarFolafo = DB::table('tb_pendaftaran')->where('id_ukm', $getIdUkm)->count();
           return view('adminUkm.folafo.dashboard', compact('getid','daftarFolafo','countMHS','countDaftar'));
       }
-      public function data_folafo($id){
+      public function data_folafo(Request $request){
+         $id = $request->session()->get('id_admin');
          $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
          $getidUkm    = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
          $countDaftar = Pendaftaran::count();
@@ -273,7 +281,8 @@ class AdminUKMController extends Controller
          );
 
       }
-      public function PdfFolafo($id){
+      public function PdfFolafo(Request $request){
+          $id = $request->session()->get('id_admin');
           $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
           $getidUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
 
