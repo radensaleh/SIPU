@@ -32,7 +32,7 @@ class AdminController extends Controller
 
     public function dashboard(Request $request){
       if(!$request->session()->exists('email')){
-        // return redirect()->route('adminpage');
+        return redirect()->route('adminpage');
       }else{
         $countAdminUKM = AdminUKM::count();
         $countUKM      = UKM::count();
