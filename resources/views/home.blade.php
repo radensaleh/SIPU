@@ -200,7 +200,7 @@
 
 					<!-- footer logo -->
 					<div class="footer-logo">
-						<a href="index.php"><img src="{{ URL::asset('img/logo-alt.png') }}" alt="logo"></a>
+						<a href="index.php"><img src="{{ URL::asset('img/logo_sipu.png') }}" alt="logo"></a>
 					</div>
 					<!-- /footer logo -->
 
