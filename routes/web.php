@@ -68,7 +68,7 @@ Route::get('/getUKM', 'UKMController@getAllUKM');
 Route::post('/daftarUKM', 'PendaftaranController@daftarUKM');
 
 //PDF UKM
-Route::get('/data-kompa/{id_admin}/DownloadPDF', 'AdminUKMController@PdfKompa')->name('PdfKompa');
+Route::get('/data-kompa/DownloadPDF', 'AdminUKMController@PdfKompa')->name('PdfKompa');
 Route::get('/data-kopen/{id_admin}/DownloadPDF', 'AdminUKMController@PdfKopen')->name('PdfKopen');
 Route::get('/data-rpi/{id_admin}/DownloadPDF', 'AdminUKMController@PdfRpi')->name('PdfRpi');
 Route::get('/data-popi/{id_admin}/DownloadPDF', 'AdminUKMController@PdfPopi')->name('PdfPopi');
