@@ -36,7 +36,7 @@ Route::post('/login-adminUkm', 'AdminUKMController@doLogin');
 Route::get('/logout-adminUkm', 'AdminUKMController@logout')->name('logoutUKM');
 
 //Dashboard Admin UKM
-Route::get('/dashboard-kompa/{id_admin}', 'AdminUKMController@dashboardKompa')->name('dashboardKompa');
+Route::get('/dashboard-kompa', 'AdminUKMController@dashboardKompa')->name('dashboardKompa');
 Route::get('/dashboard-kopen/{id_admin}', 'AdminUKMController@dashboardKopen')->name('dashboardKopen');
 Route::get('/dashboard-rpi/{id_admin}', 'AdminUKMController@dashboardRpi')->name('dashboardRpi');
 Route::get('/dashboard-popi/{id_admin}', 'AdminUKMController@dashboardPopi')->name('dashboardPopi');

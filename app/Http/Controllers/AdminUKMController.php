@@ -59,7 +59,8 @@ class AdminUKMController extends Controller
       }
 
       //ADMIN UKM KOMPA [UKM01]
-      public function dashboardKompa(Request $request, $id){
+      public function dashboardKompa(Request $request){
+          $id = $request->session()->exists('id_admin'); 
           if(!$request->session()->exists('id_admin')){
             return redirect()->route('home');
           }else{
