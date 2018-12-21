@@ -64,7 +64,7 @@
       <li>
         <a href="{{ route('data-prodi') }}">
           <div class="icon">
-            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+            <i class="icon fas fa-graduation-cap" aria-hidden="true"></i>
           </div>
           <div class="title">Data Prodi</div>
         </a>
@@ -72,7 +72,7 @@
       <li>
         <a href="{{ route('data-jurusan') }}">
           <div class="icon">
-            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+            <i class="icon fas fa-graduation-cap" aria-hidden="true"></i>
           </div>
           <div class="title">Data Jurusan</div>
         </a>
