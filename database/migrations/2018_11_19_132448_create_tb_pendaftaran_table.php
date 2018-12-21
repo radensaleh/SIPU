@@ -14,7 +14,7 @@ class CreateTbPendaftaranTable extends Migration
     public function up()
     {
         Schema::create('tb_pendaftaran', function (Blueprint $table) {
-            $table->string('id_pendaftaran');
+            $table->increments('id_pendaftaran');
             $table->string('id_ukm');
             $table->string('nim');
             $table->string('alasan');
