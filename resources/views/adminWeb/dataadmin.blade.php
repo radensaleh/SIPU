@@ -448,7 +448,7 @@
             var id_admin   = button.data('id_admin') // Extract info from data-* attributes
             var nama_admin = button.data('nama_admin')
             var email      = button.data('email')
-            var password   = button.data('password')
+            // var password   = button.data('password')
             var id_ukm     = button.data('id_ukm')
             // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
             // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
@@ -456,7 +456,7 @@
             modal.find('.modal-body #id_admin').val(id_admin)
             modal.find('.modal-body #nama_admin').val(nama_admin)
             modal.find('.modal-body #email').val(email)
-            modal.find('.modal-body #password').val(password)
+            // modal.find('.modal-body #password').val(password)
             modal.find('.modal-body #id_ukm').val(id_ukm)
             modal.find('.modal-body #cat_id').val(id_admin)
             $("#id_admin").prop('disabled', true);
