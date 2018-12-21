@@ -22,6 +22,7 @@ Route::resource('data-mhs','MahasiswaController');
 Route::get('/admin-page', 'AdminController@adminpage')->name('adminpage');
 Route::get('/dashboard-admin', 'AdminController@dashboard')->name('dashboardAdminWeb');
 Route::post('/login-adminWeb', 'AdminController@doLogin');
+Route::get('/logout', 'AdminController@logout')->name('logout');
 Route::get('/data-admin','AdminUKMController@show_dataadmin')->name('data-admin');
 Route::get('/data-ukm','UKMController@show_dataukm')->name('data-ukm');
 Route::get('/data-jurusan','JurusanController@show_datajurusan')->name('data-jurusan');
@@ -75,4 +76,4 @@ Route::get('/data-popi/{id_admin}/DownloadPDF', 'AdminUKMController@PdfPopi')->n
 Route::get('/data-folafo/{id_admin}/DownloadPDF', 'AdminUKMController@PdfFolafo')->name('PdfFolafo');
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
