@@ -59,16 +59,21 @@ class AdminUKMController extends Controller
       }
 
       //ADMIN UKM KOMPA [UKM01]
-      public function dashboardKompa($id){
-          $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
-          $getIdUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
+      public function dashboardKompa(Request $request, $id){
+          if(!$request->session()->exists('id_admin')){
+            return redirect()->route('home');
+          }else{
+            $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
+            $getIdUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
 
-          $countMHS    = Mahasiswa::count();
-          $countDaftar = Pendaftaran::count();
+            $countMHS    = Mahasiswa::count();
+            $countDaftar = Pendaftaran::count();
 
-          $daftarKompa = DB::table('tb_pendaftaran')->where('id_ukm', $getIdUkm)->count();
+            $daftarKompa = DB::table('tb_pendaftaran')->where('id_ukm', $getIdUkm)->count();
 
-          return view('adminUkm.kompa.dashboard', compact('getid','daftarKompa','countMHS','countDaftar'));
+            return view('adminUkm.kompa.dashboard', compact('getid','daftarKompa','countMHS','countDaftar'));
+          }
+
       }
       public function data_kompa($id){
          $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
