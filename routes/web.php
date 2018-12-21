@@ -40,7 +40,7 @@ Route::get('/dashboard-kompa', 'AdminUKMController@dashboardKompa')->name('dashb
 Route::get('/dashboard-kopen', 'AdminUKMController@dashboardKopen')->name('dashboardKopen');
 Route::get('/dashboard-rpi', 'AdminUKMController@dashboardRpi')->name('dashboardRpi');
 Route::get('/dashboard-popi', 'AdminUKMController@dashboardPopi')->name('dashboardPopi');
-Route::get('/dashboard-folafo/{id_admin}', 'AdminUKMController@dashboardFolafo')->name('dashboardFolafo');
+Route::get('/dashboard-folafo', 'AdminUKMController@dashboardFolafo')->name('dashboardFolafo');
 
 //Admin UKM - KOMPA
 Route::get('/data-kompa', 'AdminUKMController@data_kompa')->name('data-kompa');
@@ -55,7 +55,7 @@ Route::delete('/deleteRpi','AdminUKMController@destroyRpi')->name('deleteRpi');
 Route::get('/data-popi', 'AdminUKMController@data_popi')->name('data-popi');
 Route::delete('/deletePopi','AdminUKMController@destroyPopi')->name('deletePopi');
 //Admin UKM - FOLAFO
-Route::get('/data-folafo/{id_admin}', 'AdminUKMController@data_folafo')->name('data-folafo');
+Route::get('/data-folafo', 'AdminUKMController@data_folafo')->name('data-folafo');
 Route::delete('/deleteFolafo','AdminUKMController@destroyFolafo')->name('deleteFolafo');
 
 //API LARAVEL
@@ -72,7 +72,7 @@ Route::get('/data-kompa/DownloadPDF', 'AdminUKMController@PdfKompa')->name('PdfK
 Route::get('/data-kopen/DownloadPDF', 'AdminUKMController@PdfKopen')->name('PdfKopen');
 Route::get('/data-rpi/DownloadPDF', 'AdminUKMController@PdfRpi')->name('PdfRpi');
 Route::get('/data-popi/DownloadPDF', 'AdminUKMController@PdfPopi')->name('PdfPopi');
-Route::get('/data-folafo/{id_admin}/DownloadPDF', 'AdminUKMController@PdfFolafo')->name('PdfFolafo');
+Route::get('/data-folafo/DownloadPDF', 'AdminUKMController@PdfFolafo')->name('PdfFolafo');
 
 Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
