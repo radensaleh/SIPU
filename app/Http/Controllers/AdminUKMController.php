@@ -111,7 +111,8 @@ class AdminUKMController extends Controller
       }
 
       //ADMIN UKM KOPEN [UKM02]
-      public function dashboardKopen($id){
+      public function dashboardKopen(Request $request){
+          $id = $request->session()->get('id_admin');
           $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
           $getIdUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
 
@@ -121,7 +122,8 @@ class AdminUKMController extends Controller
           $daftarKopen = DB::table('tb_pendaftaran')->where('id_ukm', $getIdUkm)->count();
           return view('adminUkm.kopen.dashboard', compact('getid','daftarKopen','countMHS','countDaftar'));
       }
-      public function data_kopen($id){
+      public function data_kopen(Request $request){
+         $id = $request->session()->get('id_admin');
          $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
          $getidUkm    = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
          $countDaftar = Pendaftaran::count();
@@ -133,7 +135,8 @@ class AdminUKMController extends Controller
          );
 
       }
-      public function PdfKopen($id){
+      public function PdfKopen(Request $request){
+          $id = $request->session()->get('id_admin');
           $getid     = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
           $getidUkm  = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
 
