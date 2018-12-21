@@ -60,7 +60,7 @@ class AdminUKMController extends Controller
 
       //ADMIN UKM KOMPA [UKM01]
       public function dashboardKompa(Request $request){
-          $id = $request->session()->get('id_admin'); 
+          $id = $request->session()->get('id_admin');
           if(!$request->session()->exists('id_admin')){
             return redirect()->route('home');
           }else{
@@ -76,7 +76,8 @@ class AdminUKMController extends Controller
           }
 
       }
-      public function data_kompa($id){
+      public function data_kompa(Request $request){
+         $id = $request->session()->get('id_admin');
          $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
          $getidUkm    = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
          $countDaftar = Pendaftaran::count();
