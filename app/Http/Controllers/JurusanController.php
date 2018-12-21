@@ -60,7 +60,7 @@ class JurusanController extends Controller
          $datajurusan = Jurusan::findOrFail($request->id_jurusan);
          $datajurusan->delete();
 
-         if( $datajurusan ){
+         if( !$datajurusan ){
            return response()->json([
              'error' => 0,
              'message' => 'Success Delete Data'
