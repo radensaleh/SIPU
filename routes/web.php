@@ -43,7 +43,7 @@ Route::get('/dashboard-popi/{id_admin}', 'AdminUKMController@dashboardPopi')->na
 Route::get('/dashboard-folafo/{id_admin}', 'AdminUKMController@dashboardFolafo')->name('dashboardFolafo');
 
 //Admin UKM - KOMPA
-Route::get('/data-kompa/{id_admin}', 'AdminUKMController@data_kompa')->name('data-kompa');
+Route::get('/data-kompa', 'AdminUKMController@data_kompa')->name('data-kompa');
 Route::delete('/deleteKompa','AdminUKMController@destroyKompa')->name('deleteKompa');
 //Admin UKM - KOPEN
 Route::get('/data-kopen/{id_admin}', 'AdminUKMController@data_kopen')->name('data-kopen');
