@@ -17,14 +17,6 @@ use Illuminate\Support\Facades\Input;
 class AdminController extends Controller
 {
 
-    public function index(){
-        $admin = new Admin;
-        $admin->nama  = 'Admin';
-        $admin->email = 'admin@admin.com';
-        $admin->password = '123456';
-        $admin->save();
-    }
-
     public function adminpage(){
       return view('adminWeb.admin'); //sebelum login
     }
