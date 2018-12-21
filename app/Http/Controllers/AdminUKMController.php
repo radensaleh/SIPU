@@ -47,7 +47,6 @@ class AdminUKMController extends Controller
             return response()->json([
               'error'   => 0,
               'message' => 'Login Success',
-              'id_admin'=> $request->id_admin,
               'ukm'     => $request->id_ukm
             ], 200);
         }else{
