@@ -40,7 +40,7 @@
       <li class="active">
         <a href="{{ route('dashboardAdminWeb') }}">
           <div class="icon">
-            <i class="fa fa-tasks" aria-hidden="true"></i>
+            <i class="fas fa-tasks" aria-hidden="true"></i>
           </div>
           <div class="title">Dashboard</div>
         </a>
@@ -48,7 +48,7 @@
       <li>
         <a href="{{ route('data-admin') }}">
           <div class="icon">
-            <i class="fa fa-database" aria-hidden="true"></i>
+            <i class="fas fa-database" aria-hidden="true"></i>
           </div>
           <div class="title">Data Admin UKM</div>
         </a>
@@ -56,7 +56,7 @@
       <li>
         <a href="{{ route('data-ukm') }}">
           <div class="icon">
-            <i class="fa fa-database" aria-hidden="true"></i>
+            <i class="fas fa-database" aria-hidden="true"></i>
           </div>
           <div class="title">Data UKM</div>
         </a>
@@ -64,7 +64,7 @@
       <li>
         <a href="{{ route('data-prodi') }}">
           <div class="icon">
-            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
           </div>
           <div class="title">Data Prodi</div>
         </a>
@@ -72,7 +72,7 @@
       <li>
         <a href="{{ route('data-jurusan') }}">
           <div class="icon">
-            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
           </div>
           <div class="title">Data Jurusan</div>
         </a>
@@ -266,7 +266,7 @@
                 </a>
               </li> -->
               <li class="dropdown-footer">
-                <a href="{{ route('data-pendaftaran') }}">View All <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                <a href="{{ route('data-pendaftaran') }}">View All <i class="fas fa-angle-right" aria-hidden="true"></i></a>
               </li>
             </ul>
           </div>
@@ -366,7 +366,7 @@
   <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
       <a class="card card-banner card-green-light">
   <div class="card-body">
-    <i class="icon fa fa-database fa-4x"></i>
+    <i class="icon fas fa-database fa-4x"></i>
     <div class="content">
       <div class="title">Data Admin UKM</div>
       <div class="value">{{ $countAdminUKM }}<span class="sign"> Admin</span></div>
@@ -377,7 +377,7 @@
 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
       <a class="card card-banner card-blue-light">
   <div class="card-body">
-    <i class="icon fa fa-database fa-4x"></i>
+    <i class="icon fas fa-database fa-4x"></i>
     <div class="content">
       <div class="title">Data UKM</div>
       <div class="value">{{ $countUKM }}<span class="sign"> UKM</span></div>
