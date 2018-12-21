@@ -48,7 +48,7 @@
       </li>
 
       <li>
-        <a href="{{ route('data-kompa', $getid->id_admin ) }}">
+        <a href="{{ route('data-kompa') }}">
           <div class="icon">
             <i class="fa fa-database" aria-hidden="true"></i>
           </div>
