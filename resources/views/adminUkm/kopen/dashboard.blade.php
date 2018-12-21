@@ -268,7 +268,7 @@
                 </a>
               </li> -->
               <li>
-                <a href="{{ url('/') }}">
+                <a href="{{ route('logoutUKM') }}">
                   Logout
                 </a>
               </li>

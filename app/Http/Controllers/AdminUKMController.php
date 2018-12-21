@@ -25,6 +25,8 @@ class AdminUKMController extends Controller
           $id_admin = $request->session()->get('id_admin');
           if( $id_admin == 'ADM01' ){
             return redirect()->route('dashboardKompa');
+          }else if( $id_admin == 'ADM02' ){
+            return redirect()->route('dashboardKopen');
           }
         }else{
           return view('home');
