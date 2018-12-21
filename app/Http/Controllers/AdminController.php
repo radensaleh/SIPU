@@ -19,7 +19,7 @@ class AdminController extends Controller
 
     public function adminpage(Request $request){
       if($request->session()->exists('email')){
-        return redirect()->route('dashboardAdminWeb');
+        // return redirect()->route('dashboardAdminWeb');
       }else{
         return view('adminWeb.admin'); //sebelum login
       }

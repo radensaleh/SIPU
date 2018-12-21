@@ -104,7 +104,7 @@
             </div>
             <ul class="action">
               <li>
-                <a href="{{ url('/') }}">
+                <a href="{{ route('logout') }}">
                   Logout
                 </a>
               </li>

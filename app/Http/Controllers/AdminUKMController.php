@@ -15,23 +15,40 @@ use Illuminate\Support\Facades\Input;
 
 class AdminUKMController extends Controller
 {
+      public function logout(Request $request){
+        $request->session()->forget('id_admin');
+        return redirect()->route('home');
+      }
+
+      public function adminUkmPage(Request $request){
+        if($request->session()->exists('id_admin')){
+          $id_admin = $request->session()->get('id_admin');
+          if( $id_admin == 'ADM01' ){
+            return redirect()->route('dashboardKompa', $id_admin);
+          }
+        }else{
+          return view('home');
+        }
+      }
+
       //LOGIN ADMIN UKM
-      public function doLogin(){
+      public function doLogin(Request $request){
         $auth = auth()->guard('adminUkm');
 
           $credentials = [
-            'id_admin' => Input::get('id_admin'),
-            'id_ukm'   => Input::get('id_ukm'),
-            'email'    => Input::get('email'),
-            'password' => Input::get('password'),
+            'id_admin' => $request->id_admin,
+            'id_ukm'   => $request->id_ukm,
+            'email'    => $request->email,
+            'password' => $request->password,
           ];
 
         if( $auth->attempt($credentials) ){
+            $request->session()->put('id_admin', $request->id_admin);
             return response()->json([
               'error'   => 0,
               'message' => 'Login Success',
-              'id_admin'=> Input::get('id_admin'),
-              'ukm'     => Input::get('id_ukm')
+              'id_admin'=> $request->id_admin,
+              'ukm'     => $request->id_ukm
             ], 200);
         }else{
             return response()->json([

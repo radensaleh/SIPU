@@ -172,7 +172,7 @@
                 </a>
               </li> -->
               <li>
-                <a href="{{ route('adminpage') }}">
+                <a href="{{ route('logout') }}">
                   Logout
                 </a>
               </li>

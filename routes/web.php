@@ -31,10 +31,9 @@ Route::get('/data-mhs', 'MahasiswaController@show_datamhs')->name('data-mhs');
 Route::get('/data-pendaftaran', 'PendaftaranController@show_datadaftar')->name('data-pendaftaran');
 
 //admin UKM
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'AdminUKMController@adminUkmPage')->name('home');
 Route::post('/login-adminUkm', 'AdminUKMController@doLogin');
+Route::get('/logout-adminUkm', 'AdminUKMController@logout')->name('logoutUKM');
 
 //Dashboard Admin UKM
 Route::get('/dashboard-kompa/{id_admin}', 'AdminUKMController@dashboardKompa')->name('dashboardKompa');
