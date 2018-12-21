@@ -89,7 +89,8 @@ class AdminUKMController extends Controller
          );
 
       }
-      public function PdfKompa($id){
+      public function PdfKompa(Request $request){
+          $id = $request->session()->get('id_admin');
           $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
           $getidUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
 
