@@ -14,13 +14,14 @@ class CreateTbAdminUkmTable extends Migration
     public function up()
     {
         Schema::create('tb_admin_ukm', function (Blueprint $table) {
-            $table->string('id_admin')->primary();
-            $table->string('nama_admin');
-            $table->string('email');
-            $table->string('password');
-            $table->string('id_ukm');
-            $table->rememberToken();
-            $table->timestamps();
+          $table->string('id_admin')->primary();
+          $table->string('nama_admin');
+          $table->string('email');
+          $table->string('password');
+          $table->string('id_ukm')->index();
+          $table->foreign('id_ukm')->references('id_ukm')->on('tb_ukm');
+          $table->rememberToken();
+          $table->timestamps();
         });
     }
 
