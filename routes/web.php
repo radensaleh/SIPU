@@ -39,7 +39,7 @@ Route::get('/logout-adminUkm', 'AdminUKMController@logout')->name('logoutUKM');
 Route::get('/dashboard-kompa', 'AdminUKMController@dashboardKompa')->name('dashboardKompa');
 Route::get('/dashboard-kopen', 'AdminUKMController@dashboardKopen')->name('dashboardKopen');
 Route::get('/dashboard-rpi', 'AdminUKMController@dashboardRpi')->name('dashboardRpi');
-Route::get('/dashboard-popi/{id_admin}', 'AdminUKMController@dashboardPopi')->name('dashboardPopi');
+Route::get('/dashboard-popi', 'AdminUKMController@dashboardPopi')->name('dashboardPopi');
 Route::get('/dashboard-folafo/{id_admin}', 'AdminUKMController@dashboardFolafo')->name('dashboardFolafo');
 
 //Admin UKM - KOMPA
@@ -52,7 +52,7 @@ Route::delete('/deleteKopen','AdminUKMController@destroyKopen')->name('deleteKop
 Route::get('/data-rpi', 'AdminUKMController@data_rpi')->name('data-rpi');
 Route::delete('/deleteRpi','AdminUKMController@destroyRpi')->name('deleteRpi');
 //Admin UKM - POPI
-Route::get('/data-popi/{id_admin}', 'AdminUKMController@data_popi')->name('data-popi');
+Route::get('/data-popi', 'AdminUKMController@data_popi')->name('data-popi');
 Route::delete('/deletePopi','AdminUKMController@destroyPopi')->name('deletePopi');
 //Admin UKM - FOLAFO
 Route::get('/data-folafo/{id_admin}', 'AdminUKMController@data_folafo')->name('data-folafo');
@@ -71,7 +71,7 @@ Route::post('/daftarUKM', 'PendaftaranController@daftarUKM');
 Route::get('/data-kompa/DownloadPDF', 'AdminUKMController@PdfKompa')->name('PdfKompa');
 Route::get('/data-kopen/DownloadPDF', 'AdminUKMController@PdfKopen')->name('PdfKopen');
 Route::get('/data-rpi/DownloadPDF', 'AdminUKMController@PdfRpi')->name('PdfRpi');
-Route::get('/data-popi/{id_admin}/DownloadPDF', 'AdminUKMController@PdfPopi')->name('PdfPopi');
+Route::get('/data-popi/DownloadPDF', 'AdminUKMController@PdfPopi')->name('PdfPopi');
 Route::get('/data-folafo/{id_admin}/DownloadPDF', 'AdminUKMController@PdfFolafo')->name('PdfFolafo');
 
 Auth::routes();

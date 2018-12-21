@@ -205,7 +205,8 @@ class AdminUKMController extends Controller
       }
 
       //ADMIN UKM POPI [UKM04]
-      public function dashboardPopi($id){
+      public function dashboardPopi(Request $request){
+          $id = $request->session()->get('id_admin');
           $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
           $getIdUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
 
@@ -215,7 +216,8 @@ class AdminUKMController extends Controller
           $daftarPopi = DB::table('tb_pendaftaran')->where('id_ukm', $getIdUkm)->count();
           return view('adminUkm.popi.dashboard', compact('getid','daftarPopi','countMHS','countDaftar'));
       }
-      public function data_popi($id){
+      public function data_popi(Request $request){
+         $id = $request->session()->get('id_admin');
          $getid       = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
          $getidUkm    = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
          $countDaftar = Pendaftaran::count();
@@ -227,7 +229,8 @@ class AdminUKMController extends Controller
          );
 
       }
-      public function PdfPopi($id){
+      public function PdfPopi(Request $request){
+          $id = $request->session()->get('id_admin');
           $getid    = DB::table('tb_admin_ukm')->where('id_admin', $id)->first();
           $getidUkm = DB::table('tb_admin_ukm')->where('id_admin', $id)->value('id_ukm');
 
