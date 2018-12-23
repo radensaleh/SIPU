@@ -65,8 +65,8 @@
 					<!-- Logo -->
 					<div class="navbar-brand">
 						<a href="index.php">
-							<img class="logo" src="{{ URL::asset('img/logo_sipu.png') }}" alt="logo">
-							<img class="logo-alt" src="{{ URL::asset('img/logo_sipu.png') }}" alt="logo">
+							<img class="logo" src="{{ URL::asset('img/Logo_Sipu2.png') }}" alt="logo">
+							<img class="logo-alt" src="{{ URL::asset('img/Logo_Sipu1.png') }}" alt="logo">
 						</a>
 					</div>
 					<!-- /Logo -->
