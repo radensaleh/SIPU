@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 
 class ProdiController extends Controller
 {
-    public function show_dataprodi(){
+    public function show_dataprodi(Request $request){
         if(!$request->session()->get('id_admin')){
           return redirect()->route('adminpage');
         }else{
