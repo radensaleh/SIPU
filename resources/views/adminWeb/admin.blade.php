@@ -26,7 +26,7 @@
 	<!-- CDN Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	
+
 	<!-- Owl Carousel -->
 	<link type="text/css" rel="stylesheet" href="{{ URL::asset('css/owl.carousel.css') }}" />
 	<link type="text/css" rel="stylesheet" href="{{ URL::asset('css/owl.theme.default.css') }}" />
@@ -65,8 +65,8 @@
 					<!-- Logo -->
 					<div class="navbar-brand">
 						<a href="index.php">
-							<img class="logo" src="{{ URL::asset('img/logo.png') }}" alt="logo">
-							<img class="logo-alt" src="{{ URL::asset('img/logo-alt.png') }}" alt="logo">
+							<img class="logo" src="{{ URL::asset('img/Logo_Sipu2.png') }}" alt="logo">
+							<img class="logo-alt" src="{{ URL::asset('img/Logo_Sipu1.png') }}" alt="logo">
 						</a>
 					</div>
 					<!-- /Logo -->
@@ -190,7 +190,7 @@
 
 					<!-- footer logo -->
 					<div class="footer-logo">
-						<a href="index.php"><img src="{{ URL::asset('img/logo-alt.png') }}" alt="logo"></a>
+						<a href="index.php"><img src="{{ URL::asset('img/Logo_Sipu2.png') }}" alt="logo"></a>
 					</div>
 					<!-- /footer logo -->
 
