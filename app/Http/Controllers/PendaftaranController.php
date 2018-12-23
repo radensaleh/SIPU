@@ -12,25 +12,27 @@ use Illuminate\Http\Request;
 class PendaftaranController extends Controller
 {
 
-    public function show_datadaftar(){
+    public function show_datadaftar(Request $request){
+        if(!$request->session()->get('id_admin')){
+          return redirect()->route('adminpage');
+        }else{
+          $countMHS    = Mahasiswa::count();
+          $countDaftar = Pendaftaran::count();
+          $daftar      = Pendaftaran::all();
+          $admin       = Admin::all();
 
-        $countMHS    = Mahasiswa::count();
-        $countDaftar = Pendaftaran::count();
-        $daftar      = Pendaftaran::all();
-        $admin       = Admin::all();
-
-        return view('adminWeb.datapendaftaran',
-            compact(
-                'countMHS',
-                'countDaftar',
-                'daftar',
-                'admin'
-            )
-        );
+          return view('adminWeb.datapendaftaran',
+              compact(
+                  'countMHS',
+                  'countDaftar',
+                  'daftar',
+                  'admin'
+              )
+          );
+        }
     }
 
     public function daftarUKM(Request $request){
-
       $getNama = DB::table('tb_ukm')->where('id_ukm', $request->id_ukm)->value('nama_ukm');
       $cekJikaTerdaftar = DB::table('tb_pendaftaran')
                 ->where([

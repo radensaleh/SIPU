@@ -12,21 +12,25 @@ use Illuminate\Http\Request;
 class ProdiController extends Controller
 {
     public function show_dataprodi(){
-        $PRO = Prodi::all();
-        $JUR = Jurusan::all();
-        $admin       = Admin::all();
-        $countMHS    = Mahasiswa::count();
-        $countDaftar = Pendaftaran::count();
+        if(!$request->session()->get('id_admin')){
+          return redirect()->route('adminpage');
+        }else{
+          $PRO = Prodi::all();
+          $JUR = Jurusan::all();
+          $admin       = Admin::all();
+          $countMHS    = Mahasiswa::count();
+          $countDaftar = Pendaftaran::count();
 
-        return view('adminWeb.dataprodi',
-            compact(
-                'PRO',
-                'JUR',
-                'countMHS',
-                'countDaftar',
-                'admin'
-            )
-        );
+          return view('adminWeb.dataprodi',
+              compact(
+                  'PRO',
+                  'JUR',
+                  'countMHS',
+                  'countDaftar',
+                  'admin'
+              )
+          );
+        }
     }
 
     public function store(Request $request){

@@ -11,7 +11,10 @@ use Illuminate\Http\Request;
 
 class UKMController extends Controller
 {
-    public function show_dataukm(){
+    public function show_dataukm(Request $request){
+      if(!$request->session()->get('id_admin')){
+        return redirect()->route('adminpage');
+      }else{
         $UKM         = UKM::all();
         $admin       = Admin::all();
         $countMHS    = Mahasiswa::count();
@@ -25,6 +28,7 @@ class UKMController extends Controller
                 'admin'
             )
         );
+      }
     }
 
     public function store(Request $request){

@@ -11,7 +11,10 @@ use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
 {
-    public function show_datamhs(){
+    public function show_datamhs(Request $request){
+      if(!$request->session()->get('id_admin')){
+        return redirect()->route('adminpage');
+      }else{
         $mhs         = Mahasiswa::all();
         $admin       = Admin::all();
         $countMHS    = Mahasiswa::count();
@@ -25,6 +28,7 @@ class MahasiswaController extends Controller
                 'admin'
             )
         );
+      }
     }
 
     public function destroy(Request $request){

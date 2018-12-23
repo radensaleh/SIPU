@@ -10,7 +10,10 @@ use Illuminate\Http\Request;
 
 class JurusanController extends Controller
 {
-    public function show_datajurusan(){
+    public function show_datajurusan(Request $request){
+      if(!$request->session()->get('id_admin')){
+        return redirect()->route('adminpage');
+      }else{
         $JUR         = Jurusan::all();
         $admin       = Admin::all();
         $countMHS    = Mahasiswa::count();
@@ -24,6 +27,7 @@ class JurusanController extends Controller
                 'admin'
             )
         );
+      }
     }
 
     public function store(Request $request){

@@ -336,22 +336,27 @@ class AdminUKMController extends Controller
 
 
       //PAGE ADMIN WEB MENU ADMIN UKM
-      public function show_dataadmin(){
-          $adminUKM    = AdminUKM::all();
-          $dataUKM     = UKM::all();
-          $admin         = Admin::all();
-          $countMHS    = Mahasiswa::count();
-          $countDaftar = Pendaftaran::count();
+      public function show_dataadmin(Request $request){
+          if(!$request->session()->get('id_admin')){
+            return redirect()->route('adminpage');
+          }else{
+            $adminUKM    = AdminUKM::all();
+            $dataUKM     = UKM::all();
+            $admin         = Admin::all();
+            $countMHS    = Mahasiswa::count();
+            $countDaftar = Pendaftaran::count();
 
-          return view('adminWeb.dataadmin',
-              compact(
-                'countMHS',
-                'adminUKM',
-                'dataUKM',
-                'countDaftar',
-                'admin'
-              )
-          );
+            return view('adminWeb.dataadmin',
+                compact(
+                  'countMHS',
+                  'adminUKM',
+                  'dataUKM',
+                  'countDaftar',
+                  'admin'
+                )
+            );
+          }
+
       }
 
       public function store(Request $request){
